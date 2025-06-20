@@ -9,20 +9,20 @@
     --gold-primary: #D4AF37;
     --gold-dark: #B8860B;
     --gold-light: #F4E4BC;
-    --bg-light: #F5F5DC;
-    --bg-dark: #1A1A2E;
-    --text-dark: #2C2C2C;
-    --text-light: #666;
+    --bg-light: #000000;
+    --bg-dark: #000000;
+    --text-dark: #FFFFFF;
+    --text-light: #E9E7E3;
     --white: #FFFFFF;
     --shadow: rgba(212, 175, 55, 0.1);
-    --shadow-dark: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Kenao Sans Serif', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--white);
+    color: var(--text-light);
+    background-color: var(--bg-dark);
 }
 
 .container {
@@ -36,10 +36,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -53,7 +52,7 @@ body {
 }
 
 .logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Seasons', serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--gold-primary);
@@ -68,9 +67,8 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: 500;
-    transition: color 0.3s ease;
     position: relative;
 }
 
@@ -86,7 +84,6 @@ body {
     width: 0;
     height: 2px;
     background: var(--gold-primary);
-    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
@@ -101,12 +98,10 @@ body {
     border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow);
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--shadow);
 }
 
@@ -119,9 +114,8 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
+    background: var(--text-light);
     margin: 3px 0;
-    transition: 0.3s;
 }
 
 /* Hero Section */
@@ -129,7 +123,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+    background: var(--bg-dark);
     padding-top: 80px;
     position: relative;
     overflow: hidden;
@@ -159,12 +153,12 @@ body {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Seasons', serif;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 .highlight {
@@ -205,12 +199,10 @@ body {
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--shadow);
 }
 
@@ -223,13 +215,11 @@ body {
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
     background: var(--gold-primary);
     color: var(--white);
-    transform: translateY(-3px);
 }
 
 .hero-visual {
@@ -240,25 +230,14 @@ body {
 }
 
 .floating-card {
-    background: var(--white);
+    background: var(--bg-dark);
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px var(--shadow-dark);
     display: flex;
     align-items: center;
     gap: 1rem;
-    transform: translateX(20px);
-    animation: float 6s ease-in-out infinite;
-}
-
-.floating-card:nth-child(2) {
-    animation-delay: -2s;
-    transform: translateX(-20px);
-}
-
-.floating-card:nth-child(3) {
-    animation-delay: -4s;
-    transform: translateX(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .floating-card i {
@@ -268,18 +247,13 @@ body {
 
 .floating-card span {
     font-weight: 600;
-    color: var(--text-dark);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    color: var(--text-light);
 }
 
 /* About Section */
 .about {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--bg-dark);
 }
 
 .about-content {
@@ -290,10 +264,10 @@ body {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Seasons', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin-bottom: 2rem;
     position: relative;
 }
@@ -329,14 +303,15 @@ body {
 .image-placeholder {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, var(--gold-light), var(--bg-light));
+    background: var(--bg-dark);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    box-shadow: 0 20px 40px var(--shadow);
+    box-shadow: 0 20px 40px var(--shadow-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .image-placeholder i {
@@ -345,19 +320,20 @@ body {
 }
 
 .image-placeholder span {
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: 600;
 }
 
 /* Services Section */
 .services {
     padding: 6rem 0;
-    background: var(--bg-light);
+    background: var(--bg-dark);
 }
 
 .services .section-title {
     text-align: center;
     margin-bottom: 3rem;
+    color: var(--text-light);
 }
 
 .services-grid {
@@ -367,13 +343,13 @@ body {
 }
 
 .service-card {
-    background: var(--white);
+    background: var(--bg-dark);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow-dark);
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-card::before {
@@ -387,7 +363,6 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 20px 40px var(--shadow-dark);
 }
 
@@ -408,10 +383,10 @@ body {
 }
 
 .service-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Seasons', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
@@ -445,12 +420,13 @@ body {
 /* Why Choose Section */
 .why-choose {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--bg-dark);
 }
 
 .why-choose .section-title {
     text-align: center;
     margin-bottom: 3rem;
+    color: var(--text-light);
 }
 
 .benefits-grid {
@@ -464,13 +440,12 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: var(--bg-light);
+    background: var(--bg-dark);
     border-radius: 15px;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .benefit-item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 25px var(--shadow-dark);
 }
 
@@ -482,13 +457,13 @@ body {
 
 .benefit-item span {
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 /* Contact Section */
 .contact {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--bg-dark), #2A2A4E);
+    background: var(--bg-dark);
     color: var(--white);
     text-align: center;
 }
