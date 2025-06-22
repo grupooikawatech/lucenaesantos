@@ -9,8 +9,8 @@
     --gold-primary: #D4AF37;
     --gold-dark: #B8860B;
     --gold-light: #F4E4BC;
-    --bg-light: #000000;
-    --bg-dark: #000000;
+    --bg-light: #222222; /* Fundo escuro, não preto puro */
+    --bg-dark: #1A1A1A; /* Fundo ainda mais escuro para seções específicas */
     --text-dark: #FFFFFF;
     --text-light: #E9E7E3;
     --white: #FFFFFF;
@@ -36,7 +36,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(26, 26, 26, 0.95); /* Ajustado para o novo fundo escuro */
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -51,12 +51,14 @@ body {
     height: 80px;
 }
 
-.logo-text {
-    font-family: 'The Seasons', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--gold-primary);
-    text-decoration: none;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* Ajuste o tamanho da logo conforme necessário */
+    width: auto;
 }
 
 .nav-menu {
@@ -417,6 +419,86 @@ body {
     left: 0;
 }
 
+/* Cases Section */
+.cases {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+}
+
+.cases .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.case-card {
+    background: var(--bg-dark);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-dark);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+}
+
+.case-card h3 {
+    font-family: 'The Seasons', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.case-card .case-subtitle {
+    font-weight: 600;
+    color: var(--gold-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.case-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.case-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.case-card li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.case-card li::before {
+    content: '•';
+    color: var(--gold-primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
 /* Why Choose Section */
 .why-choose {
     padding: 6rem 0;
@@ -458,6 +540,27 @@ body {
 .benefit-item span {
     font-weight: 500;
     color: var(--text-light);
+}
+
+/* Commitment Section */
+.commitment {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+}
+
+.commitment .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.commitment p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
 }
 
 /* Contact Section */
@@ -511,10 +614,6 @@ body {
 .footer-logo p {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 0.5rem;
-}
-
-.footer-info p {
-    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive Design */
